@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5"/>
+
+    <link rel="icon" href="devchallenges.png"/>
+
+    <link rel="shortcut icon" type="image/x-icon" href="https://devchallenges.io/"/>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet"/>
+
+    <title>Devchallenges</title>
+
+    <style>
+      *
+      {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body 
+      {
+        font-family: "Poppins", sans-serif;
+        background-color: #fafafa; 
+      }
+
+      h3
+      {
+        margin: 32px 41px 12px 13px;
+        font-family: Playfair Display;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 32px;
+        letter-spacing: 0em;
+      }
+
+      .container.intro
+      {
+        display: flex;
+        margin-top: 0.8em;
+      }
+
+      .container.intro .left-side
+      {
+        display: flex;
+        justify-content: center;
+        width: 12%;
+      }
+
+      .container.intro .right-side
+      {
+        width: 90%;
+      }
+      
+      .container.intro .material-icons
+      {
+        display: inline-table;
+        color: #C4C4C4;
+        transform: rotate(90deg);
+      }
+
+      .intro
+      {
+        font-family: Montserrat;
+        font-size: 12px;
+        font-style: italic;
+        font-weight: 500;
+        line-height: 15px;
+        letter-spacing: 0em;
+        color: #4F4F4F;
+        width: 90%;
+      }
+
+      .image-container
+      {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 1.5em; 
+      }
+
+      .image-container img
+      {
+        border-radius: 12px;
+        width: 95%;
+      }
+
+      .info-container
+      {
+        display: flex;
+        flex-direction: column;
+        margin: 2em 3em 0em 0.8em;
+      }
+
+      .ing-container
+      {
+        color: #333333;
+      }
+
+      .ing-container h4
+      {
+        font-family: Playfair Display;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 24px;
+        margin-bottom: 1em;
+        letter-spacing: 0em;
+      }
+
+      .ing-container p
+      {
+        font-family: Montserrat;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 25px;
+        letter-spacing: 0em;
+        width: fit-content;
+
+      }
+
+      .ing-container p input[type=checkbox]
+      {
+        margin-right: 0.8em; 
+      }
+
+      input[type=checkbox]:focus
+      {
+        outline: 0px solid rgba(0, 0, 0, 0.2);
+      }
+
+      input[type=checkbox]
+      {
+        background-color: none;
+        border: 1px solid #c8c8c8;
+        box-sizing: border-box;
+        border-radius: 4px;
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        width: 17px;
+        height: 17px;
+        cursor: pointer;
+        position: relative;
+        top: 5px;
+      }
+
+      input[type=checkbox]:checked
+      {
+        background-color: #e7d9c1;
+        background: #b2a27b url("data:image/gif;base64,R0lGODlhCwAKAIABAP////3cnSH5BAEKAAEALAAAAAALAAoAAAIUjH+AC73WHIsw0UCjglraO20PNhYAOw==") 3px 3px no-repeat;
+      }
+
+      .ing-container p i
+      {
+        font-weight: 500;
+        line-height: 25px;
+      }
+
+      .ing-container .ins-container .rectangle
+      {
+        font-family: Playfair Display;
+        font-size: 24px;
+        color: #ffffff;
+        font-style: normal;
+        font-weight: 700;
+        display: inline-flex;
+        margin-right: 0.625em;
+        justify-content: center;
+        width: 44px;
+        height: 36px;
+        background: #F2994A;
+        border-radius: 6px;
+      }
+
+      .ing-container .recipe-titles
+      {
+        font-family: Playfair Display;
+        font-size: 16px;
+        font-style: italic;
+        font-weight: 400;
+        line-height: 21px;
+        letter-spacing: 0em;
+        margin: 1em 0em;
+      }
+
+      .info
+      {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .info .dinner-icon
+      {
+        display: flex;
+        font-family: Montserrat;
+        font-size: 10px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 12px;
+        letter-spacing: 0em;
+        color: #F2994A;
+      }
+
+      .info .time-icons
+      {
+        display: flex;
+        justify-content: space-between;
+        margin: 2em 0em; 
+        font-family: Montserrat;
+        font-size: 10px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 12px;
+        letter-spacing: 0em;
+        text-align: left;
+      }
+
+      .info .title
+      {
+        font-family: Montserrat;
+        font-size: 8px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 10px;
+        letter-spacing: 0em;
+        color: #BDBDBD;
+      }
+
+      .prep, .cook, .total
+      {
+        display: flex;
+      }
+
+      .description
+      {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        margin-left: 0.2em; 
+      }
+
+      .recipe-link
+      {
+        font-family: Montserrat;
+        font-size: 12px;
+        font-style: italic;
+        font-weight: 400;
+        line-height: 18px;
+        letter-spacing: 0em;
+        text-align: left;
+        color: #BDBDBD;
+        text-decoration: none;
+      }
+
+      .recipe-link a
+      {
+        color: #BDBDBD;
+        text-decoration: none;
+      }
+
+      .ins-container
+      {
+        display: inline-flex;
+        margin: 1em 0em;
+      }
+
+      ul {
+        padding-left: 24px;
+      }
+
+      li {
+        margin-bottom: 8px;
+      }
+
+      .welcome {
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      .welcome-text {
+        margin-top: 30vh;
+        font-weight: 500;
+      }
+
+      .welcome-text p {
+        font-size: 1rem;
+        font-weight: 400;
+      }
+
+      .welcome-text h1 {
+        font-size: 1.5rem;
+      }
+
+      .welcome-text a {
+        color: #f7542e;
+      }
+
+      footer
+      {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 3vh; 
+        padding-top: 10px;
+        font-family: Montserrat;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 17px;
+        letter-spacing: 0em;
+        text-align: left;
+        text-align: center;
+        color: #A9A9A9;
+      }
+
+      @media screen and (min-width: 768px)
+      {
+        .info .dinner-icon
+        {
+          flex-direction: row;
+          padding: 1em 3.4em;
+        }
+
+        .info .time-icons
+        {
+          flex-direction: column;
+          padding: 0em 1.5em;
+        }
+
+        .prep, .cook, .total
+        {
+          padding: 1.5em;
+        }
+
+        .info-container
+        {
+          flex-direction: row-reverse;
+          justify-content: center;
+          margin: 1em 14em;
+        }
+
+        .info
+        {
+          padding: 1.5em 0em;
+          background: white;
+          box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+          border-radius: 12px;
+          height: fit-content;
+          margin-left: 2.5em;
+        }
+
+        .intro
+        {
+          width: 79%;
+        }
+
+        .image-container img
+        {
+          width: 100%;
+        }
+
+        .description
+        {
+          margin-left: 1.3em;
+          width: max-content;
+        }
+
+        header
+        {
+          margin: 1em 8.5em;
+        }
+
+         h3
+        {
+          margin: 32px 41px 12px 16px;
+        }
+    }    
+
+    @media screen and (min-width: 955px)
+      {
+        header
+        {
+          margin: 1em 14em;
+        }
+
+        .cont
+        {
+          width: 78%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h3>Classic Cheesecake Recipe</h3>
+      <div class="container intro">
+        <div class="left-side">
+          <span class="material-icons">
+          drag_indicator
+          </span>
+        </div>  
+        <div class="right-side">  
+          <p class="intro">Look no further for a creamy and ultra smooth classic cheesecake recipe! Paired with a buttery graham cracker crust, no one can deny its simple decadence. For the best results, bake in a water bath.</p>
+        </div>  
+      </div>
+      <div class="image-container">
+        <img src="photo1.png">
+      </div>
+    </header>
+
+    <div class="info-container">
+      <div class="info">
+        <div class="dinner-icon">
+          <span class="material-icons">
+          local_dining
+          </span>
+          <div class="description">
+            <p class="title">Yields</p> 
+            <p>12 servings</p>
+          </div>  
+        </div>
+        <div class="time-icons">
+          <div class="prep">
+            <span class="material-icons">
+              schedule
+            </span>
+            <div class="description">  
+              <p class="title">Prep time</p> 
+              <p>45 minutes</p>
+            </div>          
+          </div>
+          <div class="cook">
+            <span class="material-icons">
+              schedule
+            </span>
+            <div class="description">  
+              <p class="title">Cook time</p> 
+              <p>1 hour</p>
+            </div>  
+          </div>
+          <div class="total">
+            <span class="material-icons">
+              schedule
+            </span>
+            <div class="description">  
+              <p class="title">Total time</p> 
+              <p>7.75 hours</p>
+            </div>  
+          </div>
+        </div>
+      </div>
+      <div class="ing-container">
+        <div class="cont">
+          <h4>Ingredients</h4>
+          <p class="recipe-titles">Graham Cracker Crust</p>  
+
+          <p><input type="checkbox">1 and 1/2 cups (150g) <b>graham cracker crumbs</b> (about 10 full sheet graham crackers)</p>
+
+          <p><input type="checkbox">5 Tablespoons (70g) <b>unsalted butter</b>, melted</p>
+          <p><input type="checkbox">1/4 cup (50g) <b>granulated sugar</b></p>
+
+
+          <p class="recipe-titles">Cheesecake</p>
+          <p><input type="checkbox">four 8-ounce blocks (904g) full-fat <b>cream cheese</b>, softened to room temperature</p>
+          <p><input type="checkbox">1 cup (200g) <b>granulated sugar</b></p>
+          <p><input type="checkbox">1 cup (240g) full-fat <b>sour cream</b>, at room temperature</p>
+          <p><input type="checkbox">1 teaspoon <b>pure vanilla extract</b></p>
+          <p><input type="checkbox">2 teaspoons <b>fresh lemon juice</b> (optional, but recommended)</p>
+          <p><input type="checkbox">3 large <b>eggs</b>, at room temperature</p>
+          <p><input type="checkbox">topping suggestions: <i>salted caramel, lemon curd, strawberry topping, chocolate ganache, red wine chocolate ganache, fresh fruit, whipped cream, or raspberry sauce</i> (recipe in notes) </p>
+
+
+          <h3>Instructions</h3>
+          <div class="ins-container">
+            <span class="rectangle">1</span>
+            <p>Adjust the oven rack to the lower-middle position and preheat oven to 350°F (177°C).</p>
+          </div>
+          <div class="ins-container">
+            <span class="rectangle">2</span>
+            <p><b>Make the crust:</b> Using a food processor, pulse the graham crackers into crumbs. Pour into a medium bowl and stir in sugar and melted butter until combined. (You can also pulse it all together in the food processor.) Mixture will be sandy. Press firmly into the bottom and slightly up the sides of a 9-inch or 10-inch springform pan. No need to grease the pan first. I use the bottom of a measuring cup to pack the crust down tightly. Pre-bake for 8 minutes. Remove from the oven and place the hot pan on a large piece of aluminum foil. The foil will wrap around the pan for the water bath in step 4. Allow crust to slightly cool as you prepare the filling.</p>
+          </div>
+          <div class="ins-container"> 
+            <span class="rectangle">3</span>
+            <p><b>Make the filling:</b> Using a handheld or stand mixer fitted with a paddle attachment, beat the cream cheese and granulated sugar together on medium-high speed in a large bowl until the mixture is smooth and creamy, about 2 minutes. Add the sour cream, vanilla extract, and lemon juice then beat until fully combined. On medium speed, add the eggs one at a time, beating after each addition until just blended. After the final egg is incorporated into the batter, stop mixing. To help prevent the cheesecake from deflating and cracking as it cools, avoid over-mixing the batter as best you can.</p>
+          </div>
+          <div class="ins-container">
+            <span class="rectangle">4</span>
+            <p><b>Prepare the simple water bath (see note)</b> Boil a pot of water. You need 1 inch of water in your roasting pan for the water bath, so make sure you boil enough. I use an entire kettle of hot water. As the water is heating up, wrap the aluminum foil around the springform pan. Pour the cheesecake batter on top of the crust. Use a rubber spatula or spoon to smooth it into an even layer. Place the pan inside of a large roasting pan. Carefully pour the hot water inside of the pan and place in the oven. (Or you can place the roasting pan in the oven first, then pour the hot water in. Whichever is easier for you.)</p>
+          </div>
+          <div class="ins-container">
+            <span class="rectangle">5</span>
+            <p>Bake cheesecake for 55-70 minutes or until the center is almost set. When it’s done, the center of the cheesecake will slightly wobble if you gently shake the pan. Turn the oven off and open the oven door slightly. Let the cheesecake sit in the oven in the water bath as it cools down for 1 hour. Remove from the oven and water bath, then cool cheesecake completely at room temperature. Then refrigerate the cheesecake for at least 4 hours or overnight.</p>
+          </div> 
+          
+          <div class="ins-container">
+            <span class="rectangle">6</span>
+            <p>Use a knife to loosen the chilled cheesecake from the rim of the springform pan, then remove the rim. Using a clean sharp knife, cut into slices for serving. For neat slices, wipe the knife clean and dip into warm water between each slice.</p>
+          </div>          
+          <div class="ins-container">
+            <span class="rectangle">7</span>
+            <p>Serve cheesecake with desired toppings. Cover and store leftover cheesecake in the refrigerator for up to 5 days.</p>
+          </div>
+
+          <p class="recipe-link">Source: <a href="https://sallysbakingaddiction.com/classic-cheesecake/">https://sallysbakingaddiction.com/classic-cheesecake/</a></p>    
+        </div>  
+      </div>
+    </div>
+     <div class="footer">
+        <footer>
+          Aymendz46 @ DevChallenges.io
+        </footer>
+      </div>
+  </body>
+</html>
